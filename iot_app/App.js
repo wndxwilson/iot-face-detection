@@ -26,8 +26,8 @@ export default function App() {
     return <Text>No access to camera</Text>;
   }
 
-  const handleFacesDetected = ({ f }) => {
-    setFaces(f)
+  const handleFacesDetected = ({ faces }) => {
+    setFaces(faces)
     if (req) {
       setReq(false)
       takePicture()
@@ -67,7 +67,10 @@ export default function App() {
       }
       catch (error) {
         console.error(error);
-        setReq(false)
+        setResult({
+          text: "Loading ... ", color: "black"
+        })
+        setReq(true)
       }
     }
 

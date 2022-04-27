@@ -1,6 +1,6 @@
 import base64
 from flask import Flask, jsonify, request
-from server.inference import get_prediction
+from inference import get_prediction
 app = Flask(__name__)
 
 @app.route('/', methods=['GET'])
@@ -38,5 +38,4 @@ def photo():
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0") 
-    # ,localhssl_context='adhoc'
     

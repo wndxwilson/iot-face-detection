@@ -1,9 +1,27 @@
 # CZ4171 IOT project
 
-This is a mask detection program to detect if the user is wearing a mask. The app will take in real-time image of the user and sends it to a remote Flask server for inference.
+Mask detection program to detect if the user is wearing a mask. The app will take in a real-time image of the user and sends them to a remote Flask server for inference. [Video](https://youtu.be/EAvAU5ojfM4)
 
-<img src="architecture.png " width="300" height="300">
+<img src="howitworks.png " width="600" height="400">
 
+## File structure
+```
+iot-face-detection
+│   README.md
+└───face_detection (Machine learning)
+│   │   faceMask_detection.ipynb
+│   
+└───iot_app (front-end)
+│   │   App.js
+│
+└───server (flask)
+│   │   app.py
+│   │   inference.py
+│   │   model_state_dict.pt
+│   │
+│   └───models 
+│       │   face_detect.py
+```
 ## 1 Tasks
 1) Local inference  
 [x] Collect user input, camera feed  
@@ -54,9 +72,10 @@ Training Loss : 0.186
 
 ## 3 Demo
 ### 3.1 Running server
+Run on local computer
 ```
 cd server
-flask run
+python app.py
 ``` 
 
 ### 3.2 Running application
